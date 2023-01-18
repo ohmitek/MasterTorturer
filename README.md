@@ -2,7 +2,7 @@
 Unity Game project in Project Course in Game Development
 
 
-- Celebrate your first step into the IDGT2022 and contribute more
+- Celebrate your first step into the Master Torturer and contribute more
 
 ## Additional tools to help you get Started with
 
