@@ -20,6 +20,11 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 12f;
 
+    //public boolean variable named "sneak" and check its value in the Update() method before moving the player.
+    //If the "sneak" variable is true, you could reduce the speed by a certain amount (e.g. by multiplying it by 0.5) before calling the controller.Move() method.
+
+    public bool sneak = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,10 +46,27 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-      
-      //Finally, the controller.Move() method is called, passing in the move vector multiplied by the speed variable and the Time.deltaTime.
-      //This causes the player object to move in the direction specified by the move vector, at a speed determined by the speed variable and in a smooth manner.
-      
+
+        // Left CTRL to sneak
+
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            sneak = true;
+        }
+        else
+        {
+            sneak = false;
+        }
+
+        if (sneak)
+        {
+            move *= 0.5f;
+        }
+
+
+        //Finally, the controller.Move() method is called, passing in the move vector multiplied by the speed variable and the Time.deltaTime.
+        //This causes the player object to move in the direction specified by the move vector, at a speed determined by the speed variable and in a smooth manner.
+
         controller.Move(move * speed * Time.deltaTime);
 
     }
