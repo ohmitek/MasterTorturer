@@ -20,6 +20,8 @@ public class Timer : MonoBehaviour {
         Debug.Log("Timer started");
         yield return new WaitForSeconds(time);
         Debug.Log("Time ran out! Do something here.");
+        //Placeholder line here
+        GameObject.Find("PlaceHolderManager").GetComponent<PlaceholderManager>().gameState = GameState.GameOver;
         timerOn = false;
     }
 }
