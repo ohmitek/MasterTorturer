@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     //public boolean variable named "sneak" and check its value in the Update() method before moving the player.
     //If the "sneak" variable is true, you could reduce the speed by a certain amount (e.g. by multiplying it by 0.5) before calling the controller.Move() method.
 
-    public bool sneak = false;
+    public static bool sneak = false;
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (sneak)
         {
-            move *= 0.5f;
+            move *= 0.3f;
         }
 
 
