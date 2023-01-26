@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState { MainMenu, Paused, GameOver, InGame }
+public enum GameState { MainMenu, Paused, GameOver, GameWon, InGame }
 public class PlaceholderManager : MonoBehaviour {
     public GameState gameState;
 
@@ -14,7 +14,7 @@ public class PlaceholderManager : MonoBehaviour {
     void Update() {
 
         //Stop time when these states are on
-        if (gameState == GameState.Paused ||  gameState == GameState.GameOver) {
+        if (gameState == GameState.Paused ||  gameState == GameState.GameOver || gameState == GameState.GameWon) {
             Time.timeScale = 0f;
         }
         else {
@@ -22,4 +22,9 @@ public class PlaceholderManager : MonoBehaviour {
         }
 
     }
+
+    public void WinGame() {
+        gameState = GameState.GameWon;
+    }
+
 }
