@@ -9,11 +9,32 @@ public class PuzzleBTrigger : MonoBehaviour {
         puzzleB = FindObjectOfType<PuzzleB>();
     }
 
+    void SetToRandomSlot(GameObject piece) {
+        //Random Id starts from 1 because we don't want to set position to "Found piece area" in unity hierarchy.
+        int randId = Random.Range(1, puzzleB.foundPieceSlots.Length);
+
+        //Check if slot is already in use, if so reroll and try again.
+        if (puzzleB.foundPieceSlotsInUse[randId] != null) {
+            Debug.Log("Slot already in use, rerolling spot");
+            SetToRandomSlot(piece);
+        }
+        else {
+            piece.transform.parent = GameObject.Find("Found piece area").transform;
+            piece.transform.position = new Vector3(puzzleB.foundPieceSlots[randId].position.x, puzzleB.foundPieceSlots[randId].position.y, puzzleB.foundPieceSlots[randId].position.z);
+            piece.transform.rotation = puzzleB.foundPieceSlots[randId].rotation;
+            //Add unused slot to used slots.
+            puzzleB.foundPieceSlotsInUse[randId] = piece.transform;
+        }
+    }
+
     void OnTriggerEnter(Collider puzzlePiece) {
         if (puzzlePiece.tag == "Puzzle piece") {
             Debug.Log("Piece hit trigger area");
             puzzlePiece.GetComponent<Rigidbody>().useGravity = false;
+            SetToRandomSlot(puzzlePiece.gameObject);
 
+            #region Own slots approach
+            /*
             switch (puzzlePiece.GetComponent<PuzzleBPiece>().pieceId) {
                 case 1:
                 puzzlePiece.transform.parent = GameObject.Find("Found piece area").transform;
@@ -46,6 +67,8 @@ public class PuzzleBTrigger : MonoBehaviour {
                 puzzlePiece.transform.rotation = puzzleB.foundPieceSlots[6].rotation;
                 break;
             }
+            */
+            #endregion
             puzzleB.foundPieceCount++;
         }
     }
