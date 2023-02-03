@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 6a2c55ebb7a9ec8478dadfd323e59ccb
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bars
+    100002: //RootNode
+    100004: Bed
+    100006: BezierCurve.001
+    100008: CeilingCell
+    100010: CeilingHallway
+    100012: CellDoor
+    100014: CellWindow
+    100016: Cylinderlock
+    100018: Padlock
+    100020: Stairs
+    100022: Torus.002
+    100024: Wall
+    100026: Wall02
+    400000: Bars
+    400002: //RootNode
+    400004: Bed
+    400006: BezierCurve.001
+    400008: CeilingCell
+    400010: CeilingHallway
+    400012: CellDoor
+    400014: CellWindow
+    400016: Cylinderlock
+    400018: Padlock
+    400020: Stairs
+    400022: Torus.002
+    400024: Wall
+    400026: Wall02
+    2100000: No Name
+    2100002: Bed
+    2100004: Wall02
+    2100006: Stairs
+    2100008: CellDoor
+    2100010: CeilingCell
+    2100012: CellWindow
+    2100014: Wall
+    2100016: Bars
+    2100018: CeilingHallway
+    2300000: Bars
+    2300002: Bed
+    2300004: BezierCurve.001
+    2300006: CeilingCell
+    2300008: CeilingHallway
+    2300010: CellDoor
+    2300012: CellWindow
+    2300014: Cylinderlock
+    2300016: Padlock
+    2300018: Stairs
+    2300020: Torus.002
+    2300022: Wall
+    2300024: Wall02
+    2300026: //RootNode
+    3300000: Bars
+    3300002: Bed
+    3300004: BezierCurve.001
+    3300006: CeilingCell
+    3300008: CeilingHallway
+    3300010: CellDoor
+    3300012: CellWindow
+    3300014: Cylinderlock
+    3300016: Padlock
+    3300018: Stairs
+    3300020: Torus.002
+    3300022: Wall
+    3300024: Wall02
+    3300026: //RootNode
+    4300000: BezierCurve.001
+    4300002: Torus.002
+    4300004: Bed
+    4300006: Wall02
+    4300008: Stairs
+    4300010: Cylinderlock
+    4300012: Padlock
+    4300014: CellDoor
+    4300016: CeilingCell
+    4300018: CellWindow
+    4300020: Wall
+    4300022: Bars
+    4300024: CeilingHallway
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bed
+    second: {fileID: 2100000, guid: 98f6e2a1eaa1d5e46bbe2eaccc34ab38, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
