@@ -30,7 +30,7 @@ public class PuzzleBTrigger : MonoBehaviour {
     void OnTriggerEnter(Collider puzzlePiece) {
         if (puzzlePiece.tag == "Puzzle piece") {
             Debug.Log("Piece hit trigger area");
-            puzzlePiece.GetComponent<Rigidbody>().useGravity = false;
+            puzzlePiece.GetComponent<Rigidbody>().freezeRotation = true;
             SetToRandomSlot(puzzlePiece.gameObject);
 
             #region Own slots approach
