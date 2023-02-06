@@ -16,8 +16,11 @@ public class PuzzleB : MonoBehaviour {
     [SerializeField] GameObject puzzleCam, mainCam;
     Ray mouseRay;
 
+    GameManager gm;
+
     void Start() {
         puzzleState = PuzzleState.WaitingPieces;
+        gm = FindObjectOfType<GameManager>();
 
         foundPieceSlots = GameObject.Find("Found piece area").GetComponentsInChildren<Transform>();
         foundPieceSlotsInUse = new Transform[foundPieceSlots.Length];
@@ -98,9 +101,10 @@ public class PuzzleB : MonoBehaviour {
                     piecesInCorrectSpot++;
                     if (piecesInCorrectSpot == piecesNeeded) {
                         puzzleState = PuzzleState.Finished;
-                        //Instaniate rewards
+                        //Instaniate rewards and "mark" puzzle as finished in GameManager
                         Instantiate(puzzleRewards[0], rewardSpawnSpots[0].position, puzzleRewards[0].transform.rotation);
                         Instantiate(puzzleRewards[1], rewardSpawnSpots[1].position, puzzleRewards[1].transform.rotation);
+                        gm.PuzzleDone();
                     }
                     
                 }
