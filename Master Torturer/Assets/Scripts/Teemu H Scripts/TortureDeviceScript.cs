@@ -7,9 +7,13 @@ public class TortureDeviceScript : MonoBehaviour
 
     [SerializeField] private Transform[] snapLocations;
 
-    private bool[] devicesInPlace;
-    private int selectedDeviceIndex = -1;
+    [SerializeField] private GameObject pile;
 
+
+    private bool[] devicesInPlace;
+    private bool tortureStarted;
+    private int selectedDeviceIndex = -1;
+    
     private void Start()
     {
         devicesInPlace = new bool[tortureDevices.Length];
@@ -38,9 +42,12 @@ public class TortureDeviceScript : MonoBehaviour
 
             devicesInPlace[i] = true;
         }
-
-        // All devices are in the correct position, start the torturing method
-        StartTortureMethod();
+            // All devices are in the correct position and torture hasn't started yet, start the torturing method
+        if (!tortureStarted)
+        {
+            StartTortureMethod();
+            tortureStarted = true;
+        }
     }
 
     //If your GameObject starts to collide with another GameObject with a Collider
@@ -49,7 +56,7 @@ public class TortureDeviceScript : MonoBehaviour
       if (piece.collider.tag == "Puzzle piece")
       {
         //Output the Collider's GameObject's name
-        Debug.Log(piece.collider.name);
+        Debug.Log(piece.collider.name + " placed to the table");
 
         //Snap each torture device to the corresponding snap location
         for (int i = 0; i < tortureDevices.Length; i++)
@@ -94,10 +101,22 @@ public class TortureDeviceScript : MonoBehaviour
             }
         }
 
-        if (correctOrder)
+        if (!correctOrder)
+        {
+            
+            for (int i = 0; i < tortureDevices.Length; i++)
+            {
+                Rigidbody deviceRigidbody = tortureDevices[i].GetComponent<Rigidbody>();
+                deviceRigidbody.useGravity = true;
+                deviceRigidbody.AddForce(pile.transform.position - tortureDevices[i].transform.position);
+                //tortureDevices[i].transform.position = pile.transform.position;
+                //tortureDevices[i].transform.rotation = pile.transform.rotation;
+                //selectedDeviceIndex = -1;
+            }
+        }
+        else
         {
             Debug.Log("CORRECT ORDER! START TORTURE!");
-
             // Fade out the camera
             // Play the sounds of torture
             // Fade in the camera
