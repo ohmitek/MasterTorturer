@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
+using Cinemachine;
 public enum PuzzleState { WaitingPieces, InProgress, Unfinished, Finished }
 public class PuzzleB : MonoBehaviour {
     public PuzzleState puzzleState;
@@ -13,7 +14,8 @@ public class PuzzleB : MonoBehaviour {
 
     [SerializeField] GameObject[] puzzleRewards;
     [SerializeField] Transform[] rewardSpawnSpots;
-    [SerializeField] GameObject puzzleCam, mainCam;
+    //[SerializeField] GameObject puzzleCam, mainCam;
+    [SerializeField] CinemachineClearShot tableCam;
     Ray mouseRay;
 
     GameManager gm;
@@ -47,13 +49,15 @@ public class PuzzleB : MonoBehaviour {
         //Switch that controls player and puzzle camera
         switch (puzzleState) {
             case PuzzleState.InProgress:
-            puzzleCam.SetActive(true);
-            mainCam.SetActive(false);
+            //puzzleCam.SetActive(true);
+            //mainCam.SetActive(false);
+            tableCam.Priority = 11;
             Cursor.lockState = CursorLockMode.Confined;
             break;
             case PuzzleState.Unfinished or PuzzleState.Finished:
-            puzzleCam.SetActive(false);
-            mainCam.SetActive(true);
+            //puzzleCam.SetActive(false);
+            //mainCam.SetActive(true);
+            tableCam.Priority = 1;
             Cursor.lockState = CursorLockMode.Locked;
             break;
         }

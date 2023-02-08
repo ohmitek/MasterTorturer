@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static PlayerMovement;
+using Cinemachine;
 
 // This script is a C# script for Unity that provides mouse look functionality for a player character.
 // The script is attached to the main camera of the player and uses the UnityEngine input system to get the mouse input.
@@ -18,6 +19,7 @@ public class MouseLooks : MonoBehaviour
     public Transform playerBody;
 
     float xRotation = 0f;
+    [SerializeField]CinemachineVirtualCamera playerCam;
     
     // Start is called before the first frame update
     void Start()
@@ -49,11 +51,14 @@ public class MouseLooks : MonoBehaviour
 
         if (PlayerMovement.sneak)
         {
-            transform.localPosition = new Vector3(0, -0.01f, 0);
+            //transform.localPosition = new Vector3(0, -0.01f, 0);
+            playerCam.transform.localPosition = new Vector3(0, -0.01f, 0);
+
         }
         else
         {
-            transform.localPosition = new Vector3(0, 1.6f, 0);
+            //transform.localPosition = new Vector3(0, 1.6f, 0);
+            playerCam.transform.localPosition = new Vector3(0, 1.6f, 0);
         }
 
         // This code is used to apply the rotation to the camera and player body.
@@ -61,8 +66,9 @@ public class MouseLooks : MonoBehaviour
         // The Quaternion.Euler function is used to convert the euler angles to a quaternion. The second line of code is used to rotate the player body's transform component by the mouseX input.
         // The Rotate function is used to rotate the transform component by a certain amount, in this case it is rotated by the mouseX input along the up vector.
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        //transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+        playerCam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
     }
 }
