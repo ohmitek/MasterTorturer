@@ -8,14 +8,15 @@ public class PuzzleB : MonoBehaviour {
     public PuzzleState puzzleState;
     public Transform[] foundPieceSlots, foundPieceSlotsInUse, slabSlots;
     public int foundPieceCount, piecesNeeded;
+    [Tooltip("Maximum allowed offset distance for piece to still snap into correct slot")][SerializeField] float pieceDistanceValue;
     [SerializeField] int piecesInCorrectSpot;
     bool originSpotChecked;
     Vector3 originalSpot;
 
     [SerializeField] GameObject[] puzzleRewards;
     [SerializeField] Transform[] rewardSpawnSpots;
-    //[SerializeField] GameObject puzzleCam, mainCam;
     [SerializeField] CinemachineClearShot tableCam;
+
     Ray mouseRay;
 
     GameManager gm;
@@ -49,14 +50,10 @@ public class PuzzleB : MonoBehaviour {
         //Switch that controls player and puzzle camera
         switch (puzzleState) {
             case PuzzleState.InProgress:
-            //puzzleCam.SetActive(true);
-            //mainCam.SetActive(false);
             tableCam.Priority = 11;
             Cursor.lockState = CursorLockMode.Confined;
             break;
             case PuzzleState.Unfinished or PuzzleState.Finished:
-            //puzzleCam.SetActive(false);
-            //mainCam.SetActive(true);
             tableCam.Priority = 1;
             Cursor.lockState = CursorLockMode.Locked;
             break;
@@ -92,8 +89,8 @@ public class PuzzleB : MonoBehaviour {
                 int pieceId = ray.transform.GetComponent<PuzzleBPiece>().pieceId;
                 
                 //Check if piece is close enough to it's spot
-                if (ray.transform.position.x - slabSlots[pieceId].position.x >= -0.2f && ray.transform.position.x - slabSlots[pieceId].position.x <= 0.2f
-                    && ray.transform.position.z - slabSlots[pieceId].position.z >= -0.2f && ray.transform.position.z - slabSlots[pieceId].position.z <= 0.2f) {
+                if (ray.transform.position.x - slabSlots[pieceId].position.x >= -pieceDistanceValue && ray.transform.position.x - slabSlots[pieceId].position.x <= pieceDistanceValue
+                    && ray.transform.position.z - slabSlots[pieceId].position.z >= -pieceDistanceValue && ray.transform.position.z - slabSlots[pieceId].position.z <= pieceDistanceValue) {
                     Debug.Log("Close enough");
                     ray.transform.position = slabSlots[pieceId].position;
 
@@ -104,18 +101,24 @@ public class PuzzleB : MonoBehaviour {
 
                     piecesInCorrectSpot++;
                     if (piecesInCorrectSpot == piecesNeeded) {
+                        TortureDeviceScriptCopyTK puzzleA = FindObjectOfType<TortureDeviceScriptCopyTK>();
                         puzzleState = PuzzleState.Finished;
                         //Instaniate rewards and "mark" puzzle as finished in GameManager
                         Instantiate(puzzleRewards[0], rewardSpawnSpots[0].position, puzzleRewards[0].transform.rotation);
-                        Instantiate(puzzleRewards[1], rewardSpawnSpots[1].position, puzzleRewards[1].transform.rotation);
+                        //Instantiate(puzzleRewards[1], rewardSpawnSpots[1].position, puzzleRewards[1].transform.rotation);
+
+                        puzzleA.AddTortuteItemToList(Instantiate(puzzleRewards[1], rewardSpawnSpots[1].position, puzzleRewards[1].transform.rotation), 0);
+                        puzzleA.puzzleBFinished = true;
                         gm.PuzzleDone();
                     }
                     
                 }
                 else {
                     Debug.Log("Not close enough");
+                    Debug.Log("Distance from correct slot (Vector x): " + (ray.transform.position.x - slabSlots[pieceId].position.x));
+                    Debug.Log("Distance from correct slot (Vector z): " + (ray.transform.position.z - slabSlots[pieceId].position.z));
                     //Reset the piece back to its original spot
-                    if(originSpotChecked) {
+                    if (originSpotChecked) {
                         ray.transform.position = originalSpot;
                         originSpotChecked = false;
                     }
