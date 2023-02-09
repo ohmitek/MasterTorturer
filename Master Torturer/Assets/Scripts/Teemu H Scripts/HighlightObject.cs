@@ -18,16 +18,16 @@ public class HighlightObject : MonoBehaviour
         {
             if (hit.transform == transform)
             {
-                meshRend.material.color = Color.yellow;
+                meshRend.sharedMaterial.color = Color.yellow;
             }
             else
             {
-                meshRend.material.color = Color.white;
+                meshRend.sharedMaterial.color = Color.white;
             }
         }
         else
         {
-            meshRend.material.color = Color.white;
+            meshRend.sharedMaterial.color = Color.white;
         }
     }
 }

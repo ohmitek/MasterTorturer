@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - Puzzle piece
   - Puzzle piece slot
+  - Torture Tool
   layers:
   - Default
   - TransparentFX

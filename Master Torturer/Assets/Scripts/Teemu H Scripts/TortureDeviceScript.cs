@@ -7,9 +7,6 @@ public class TortureDeviceScript : MonoBehaviour
 
     [SerializeField] private Transform[] snapLocations;
 
-    [SerializeField] private GameObject pile;
-
-
     private bool[] devicesInPlace;
     private bool tortureStarted;
     private int selectedDeviceIndex = -1;
@@ -53,7 +50,7 @@ public class TortureDeviceScript : MonoBehaviour
     //If your GameObject starts to collide with another GameObject with a Collider
     void OnCollisionEnter(Collision piece)
     {
-      if (piece.collider.tag == "Puzzle piece")
+      if (piece.collider.tag == "Torture Tool")
       {
         //Output the Collider's GameObject's name
         Debug.Log(piece.collider.name + " placed to the table");
@@ -106,9 +103,9 @@ public class TortureDeviceScript : MonoBehaviour
             
             for (int i = 0; i < tortureDevices.Length; i++)
             {
-                Rigidbody deviceRigidbody = tortureDevices[i].GetComponent<Rigidbody>();
-                deviceRigidbody.useGravity = true;
-                deviceRigidbody.AddForce(pile.transform.position - tortureDevices[i].transform.position);
+                //Rigidbody deviceRigidbody = tortureDevices[i].GetComponent<Rigidbody>();
+                //deviceRigidbody.useGravity = true;
+                //deviceRigidbody.AddForce(pile.transform.position - tortureDevices[i].transform.position);
                 //tortureDevices[i].transform.position = pile.transform.position;
                 //tortureDevices[i].transform.rotation = pile.transform.rotation;
                 //selectedDeviceIndex = -1;
