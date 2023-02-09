@@ -20,7 +20,9 @@ public class MouseLooks : MonoBehaviour
 
     float xRotation = 0f;
     [SerializeField]CinemachineVirtualCamera playerCam;
-    
+    [SerializeField][Range(0f, 2f)] float cameraHeight;
+    [SerializeField][Range(0f, 2f)] float cameraHeightSneak;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,13 +54,13 @@ public class MouseLooks : MonoBehaviour
         if (PlayerMovement.sneak)
         {
             //transform.localPosition = new Vector3(0, -0.01f, 0);
-            playerCam.transform.localPosition = new Vector3(0, -0.01f, 0);
+            playerCam.transform.localPosition = new Vector3(0, -cameraHeightSneak, 0);
 
         }
         else
         {
             //transform.localPosition = new Vector3(0, 1.6f, 0);
-            playerCam.transform.localPosition = new Vector3(0, 1.6f, 0);
+            playerCam.transform.localPosition = new Vector3(0, cameraHeight, 0);
         }
 
         // This code is used to apply the rotation to the camera and player body.
