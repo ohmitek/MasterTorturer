@@ -11,11 +11,13 @@ public class Timer : MonoBehaviour {
     float time2;
     bool point1, point2, point3, point4;
 
+    MonsterMovement mm;
     GameManager gm;
 
     void Start() {
         time2 = maxTime;
         gm = FindObjectOfType<GameManager>();
+        mm = FindObjectOfType<MonsterMovement>();
     }
 
     void Update() {
@@ -33,14 +35,17 @@ public class Timer : MonoBehaviour {
         else if (time2 <= maxTime * 0.3 && !point3) {
             point3 = true;
             DisplayTime(time2);
+            mm.MoveToNextPosition();
         }
         else if (time2 <= maxTime * 0.5 && !point2) {
             point2 = true;
             DisplayTime(time2);
+            mm.MoveToNextPosition();
         }
         else if (time2 <= maxTime * 0.8 && !point1) {
             point1 = true;
             DisplayTime(time2);
+            mm.MoveToNextPosition();
         }
 
         //Test button for Coroutine timer
