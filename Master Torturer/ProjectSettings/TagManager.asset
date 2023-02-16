@@ -9,6 +9,7 @@ TagManager:
   - Puzzle piece
   - Puzzle piece slot
   - Torture Tool
+  - Cage
   layers:
   - Default
   - TransparentFX
