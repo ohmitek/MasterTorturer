@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028405, g: 0.22571477, b: 0.3069229, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028381, g: 0.2257143, b: 0.3069223, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -260,8 +260,8 @@ GameObject:
   - component: {fileID: 619829650}
   - component: {fileID: 619829649}
   - component: {fileID: 619829652}
-  - component: {fileID: 619829654}
   - component: {fileID: 619829653}
+  - component: {fileID: 619829654}
   m_Layer: 0
   m_Name: TortureTool2
   m_TagString: Puzzle piece
@@ -372,9 +372,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 619829647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13d0731a8bc074758951ad079ad59b4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 57086e950b1794a4c903f4fdcb3c27ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlineMaterial: {fileID: 2100000, guid: a9a99d05c51e740859472f54fdedf3bf, type: 2}
 --- !u!1 &665548697
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +674,6 @@ MonoBehaviour:
   - {fileID: 665548698}
   - {fileID: 805256206}
   - {fileID: 1966774599}
-  pile: {fileID: 1137957862}
 --- !u!1 &1576089986
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d0731a8bc074758951ad079ad59b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshRend: {fileID: 0}
 --- !u!1 &1885783577
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,6 +964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d0731a8bc074758951ad079ad59b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshRend: {fileID: 0}
 --- !u!1 &1966774598
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,6 +996,69 @@ Transform:
   m_Father: {fileID: 1576089987}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &2070137325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2070137327}
+  - component: {fileID: 2070137326}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2070137326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070137325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9e51c55977b442d945220bc5c0dc3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicMixerGroup: {fileID: -4248607657035298599, guid: b9ea8fa97eb6d4d15ad481d3b7aefefc,
+    type: 2}
+  soundEffectsMixerGroup: {fileID: 6110811636938397919, guid: b9ea8fa97eb6d4d15ad481d3b7aefefc,
+    type: 2}
+  sounds:
+  - audioType: 1
+    source: {fileID: 0}
+    clipName: 
+    audioClip: {fileID: 8300000, guid: e6a23d2bba3a50049a87ad96c08d57b5, type: 3}
+    isLoop: 1
+    playOnAwake: 1
+    volume: 0.8
+  - audioType: 0
+    source: {fileID: 0}
+    clipName: 
+    audioClip: {fileID: 8300000, guid: e6a23d2bba3a50049a87ad96c08d57b5, type: 3}
+    isLoop: 1
+    playOnAwake: 0
+    volume: 0.8
+--- !u!4 &2070137327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070137325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -59.075306, y: 8.135732, z: -32.64286}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2090528956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1190,6 +1255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d0731a8bc074758951ad079ad59b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshRend: {fileID: 0}
 --- !u!1001 &4776076266548178729
 PrefabInstance:
   m_ObjectHideFlags: 0
