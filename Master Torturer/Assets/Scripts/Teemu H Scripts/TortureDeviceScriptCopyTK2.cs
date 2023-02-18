@@ -11,6 +11,7 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
     [SerializeField] private Transform[] snapLocations;
 
     [SerializeField] private CinemachineClearShot virtualTortureCamera;
+    [SerializeField] private CinemachineClearShot virtualTortureCameraZoom;
 
     private bool[] devicesInPlace;
     private bool tortureStarted;
@@ -160,8 +161,17 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
     }
 
     private IEnumerator ResetCameraPriority() {
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(6f);
+        virtualTortureCameraZoom.Priority = 12;
+        StartCoroutine(ResetCameraPriorityAfterDelay());
+    }
+
+    private IEnumerator ResetCameraPriorityAfterDelay()
+    {
+        yield return new WaitForSeconds(10f);
+        virtualTortureCameraZoom.Priority = 1;
         virtualTortureCamera.Priority = 1;
     }
+
 
 }
