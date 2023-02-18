@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Cinemachine;
 
 public class TortureDeviceScriptCopyTK2 : MonoBehaviour
 {
     [SerializeField] private GameObject[] tortureDevices;
 
     [SerializeField] private Transform[] snapLocations;
+
+    [SerializeField] private CinemachineClearShot virtualTortureCamera;
 
     private bool[] devicesInPlace;
     private bool tortureStarted;
@@ -135,7 +138,6 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
         }
 
         if (!correctOrder) {
-
             for (int i = 0; i < tortureDevices.Length; i++) {
                 //Rigidbody deviceRigidbody = tortureDevices[i].GetComponent<Rigidbody>();
                 //deviceRigidbody.useGravity = true;
@@ -143,13 +145,23 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
                 //tortureDevices[i].transform.position = pile.transform.position;
                 //tortureDevices[i].transform.rotation = pile.transform.rotation;
                 //selectedDeviceIndex = -1;
+                Debug.Log("Incorrect order!");
             }
-        }
-        else {
-            Debug.Log("CORRECT ORDER! START TORTURE!");
-            // Fade out the camera
-            // Play the sounds of torture
-            // Fade in the camera
+        } else {
+            Debug.Log("TORTURE STARTED!");
+
+            virtualTortureCamera.Priority = 11;
+
+            // Wait for 8 seconds and then change the camera priority back to 1
+            StartCoroutine(ResetCameraPriority());
+
+            tortureStarted = true;
         }
     }
+
+    private IEnumerator ResetCameraPriority() {
+        yield return new WaitForSeconds(8f);
+        virtualTortureCamera.Priority = 1;
+    }
+
 }
