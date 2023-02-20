@@ -13,13 +13,21 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
     [SerializeField] private CinemachineClearShot virtualTortureCamera;
     [SerializeField] private CinemachineClearShot virtualTortureCameraZoom;
 
+    //AudioManager audioManager = AudioManager.Instance;
+
+    public GameObject ringPrefab; // reference to the ring prefab (REWARD from Puzzle A)
+
     private bool[] devicesInPlace;
     private bool tortureStarted;
     private int selectedDeviceIndex = -1;
     private int disabledSnapRendererIndex = -1; // declare the variable here
 
+
     //Teemu K additions
     public bool puzzleBFinished;
+
+    //Teemu H
+    public bool puzzleAFinished;
 
     private void Start() {
         devicesInPlace = new bool[tortureDevices.Length];
@@ -89,6 +97,7 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
                 // Disable the mesh renderer of the snap location
                 Renderer snapRenderer = snapLocations[closestSnapLocationIndex].GetComponent<Renderer>();
                 if (snapRenderer != null) {
+                    AudioManager.Instance.Play("Metalsound");
                     snapRenderer.enabled = false;
                 }
             }
@@ -151,6 +160,8 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
         } else {
             Debug.Log("TORTURE STARTED!");
 
+            AudioManager.Instance.Play("Puzzledone");
+
             virtualTortureCamera.Priority = 11;
 
             // Wait for 8 seconds and then change the camera priority back to 1
@@ -161,7 +172,7 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
     }
 
     private IEnumerator ResetCameraPriority() {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(8f);
         virtualTortureCameraZoom.Priority = 12;
         StartCoroutine(ResetCameraPriorityAfterDelay());
     }
@@ -171,6 +182,9 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
         yield return new WaitForSeconds(10f);
         virtualTortureCameraZoom.Priority = 1;
         virtualTortureCamera.Priority = 1;
+        Vector3 ringPosition = new Vector3(-5.424f, 0.100f, 1.767f); // position to instantiate the ring
+        Instantiate(ringPrefab, ringPosition, Quaternion.identity); // instantiate the ring prefab at the specified position
+        puzzleAFinished = true;
     }
 
 

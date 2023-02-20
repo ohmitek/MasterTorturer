@@ -3180,7 +3180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768790799}
   m_LocalRotation: {x: -0.3081626, y: 0.2946139, z: -0.1011376, w: -0.89889354}
-  m_LocalPosition: {x: 1.2190111, y: 1.568, z: 0.05000007}
+  m_LocalPosition: {x: 1.214, y: 1.568, z: 0.085}
   m_LocalScale: {x: 0.72989327, y: 1.0191475, z: 0.97145975}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3567,7 +3567,8 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
-  m_ChildCameras: []
+  m_ChildCameras:
+  - {fileID: 1700257148}
   m_ActivateAfter: 0
   m_MinDuration: 0
   m_RandomizeChoice: 0
@@ -4184,10 +4185,31 @@ MonoBehaviour:
   soundEffectsMixerGroup: {fileID: 6110811636938397919, guid: b9ea8fa97eb6d4d15ad481d3b7aefefc,
     type: 2}
   sounds:
+  - audioType: 0
+    source: {fileID: 0}
+    clipName: Puzzledone
+    audioClip: {fileID: 8300000, guid: 70982561b43c27e4c8a2a6801890bf8a, type: 3}
+    isLoop: 0
+    playOnAwake: 0
+    volume: 0.9
+  - audioType: 0
+    source: {fileID: 0}
+    clipName: Metalsound
+    audioClip: {fileID: 8300000, guid: b55001732c5559d40b717d01474356a2, type: 3}
+    isLoop: 0
+    playOnAwake: 0
+    volume: 0.3
+  - audioType: 0
+    source: {fileID: 0}
+    clipName: Metalsound2
+    audioClip: {fileID: 8300000, guid: 301128cc2e9850f4c97eeac2710e31b1, type: 3}
+    isLoop: 0
+    playOnAwake: 0
+    volume: 0.3
   - audioType: 1
     source: {fileID: 0}
-    clipName: 
-    audioClip: {fileID: 8300000, guid: 021dbaaa35620c2408034a8f00894de0, type: 3}
+    clipName: SUBBassRumbleLoop
+    audioClip: {fileID: 8300000, guid: 380f8ccea684e2342bc119dd6759f189, type: 3}
     isLoop: 1
     playOnAwake: 1
     volume: 0.5
@@ -5346,7 +5368,8 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
-  m_ChildCameras: []
+  m_ChildCameras:
+  - {fileID: 768790802}
   m_ActivateAfter: 0
   m_MinDuration: 0
   m_RandomizeChoice: 0
@@ -7638,6 +7661,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3896263934865837642, guid: 83c3af9de31bf7b4d80fa16e037f11ec,
+        type: 3}
+      propertyPath: ringPrefab
+      value: 
+      objectReference: {fileID: 5957835214034572923, guid: 12b6ab90c725ed14fb5e30054564bf36,
+        type: 3}
     - target: {fileID: 3896263934865837642, guid: 83c3af9de31bf7b4d80fa16e037f11ec,
         type: 3}
       propertyPath: puzzleBFinished
