@@ -20,12 +20,43 @@ public class ItemPickUp : MonoBehaviour
                 layermask = ~layermask;
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickupRange, layermask))
-                {
-                    PickupObject(hit.transform.gameObject);
-                    Debug.Log("Doimi pls");
-                    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-                    Debug.Log(hit.collider.gameObject);
-
+                { 
+                    //Teemu K addition
+                    try {
+                        PuzzleD pD = FindObjectOfType<PuzzleD>();
+                        PuzzleDValve valve = hit.transform.GetComponent<PuzzleDValve>();
+                        if (valve.valveType == ValveType.Left && valve.attached && hit.point.x < valve.transform.position.x && pD.puzzleState != PuzzleState.Finished) {
+                            //Debug.Log(hit.point.x);
+                            pD.cageScripts[2].StartCoroutine("MoveCageDown");
+                            pD.cageScripts[1].StartCoroutine("MoveCageUp");
+                            valve.StartCoroutine("RotateCounterClockwise");
+                        }
+                        else if (valve.valveType == ValveType.Left && valve.attached && hit.point.x > valve.transform.position.x && pD.puzzleState != PuzzleState.Finished) {
+                            //Debug.Log(hit.point.x);
+                            pD.cageScripts[1].StartCoroutine("MoveCageDown");
+                            pD.cageScripts[0].StartCoroutine("MoveCageUp");
+                            valve.StartCoroutine("RotateClockwise");
+                        }
+                        else if (valve.valveType == ValveType.Right && valve.attached && hit.point.x < valve.transform.position.x && pD.puzzleState != PuzzleState.Finished) {
+                            //Debug.Log(hit.point.x);
+                            pD.cageScripts[0].StartCoroutine("MoveCageDown");
+                            valve.StartCoroutine("RotateCounterClockwise");
+                        }
+                        else if (valve.valveType == ValveType.Right && valve.attached && hit.point.x > valve.transform.position.x && pD.puzzleState != PuzzleState.Finished) {
+                            //Debug.Log(hit.point.x);
+                            pD.cageScripts[2].StartCoroutine("MoveCageUp");
+                            valve.StartCoroutine("RotateClockwise");
+                        }
+                        else {
+                            PickupObject(hit.transform.gameObject);
+                        }
+                    }
+                    catch {
+                        PickupObject(hit.transform.gameObject);
+                        Debug.Log("Doimi pls");
+                        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+                        Debug.Log(hit.collider.gameObject);
+                    }
                 }
             }
             else

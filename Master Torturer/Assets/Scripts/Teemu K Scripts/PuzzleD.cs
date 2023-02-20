@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class PuzzleD : MonoBehaviour {
-    PuzzleState puzzleState;
+    public PuzzleState puzzleState;
     public Vector3[] gageStartPos, cageHeightlevels;
     [SerializeField] GameObject[] cages;
-    [SerializeField] PuzzleDCage[] cageScripts;
+    public PuzzleDCage[] cageScripts;
     [Tooltip("Value wanted for the distance between levels")][SerializeField] float cageLevelDistance;
 
     void Start() {
@@ -57,10 +58,19 @@ public class PuzzleD : MonoBehaviour {
         }
 
         //Check if cages are in correct spots to finish puzzle
-        if(puzzleState != PuzzleState.Finished && cages[0].transform.position.y == cageHeightlevels[3].y && cages[1].transform.position.y == cageHeightlevels[2].y
+        if (puzzleState != PuzzleState.Finished && cages[0].transform.position.y == cageHeightlevels[3].y && cages[1].transform.position.y == cageHeightlevels[2].y
             && cages[2].transform.position.y == cageHeightlevels[1].y) {
             Debug.Log("Puzzle is correct!");
             puzzleState = PuzzleState.Finished;
+
+            PuzzleDValve[] valves = FindObjectsOfType<PuzzleDValve>();
+            //Destroy valve rigidbodies, so they can't be moved after the puzzle is done.
+            Destroy(valves[0].valveRb);
+            Destroy(valves[1].valveRb);
+
+            //Play Puzzle is done sound
+            AudioManager aM = FindObjectOfType<AudioManager>();
+            aM.Play("Puzzledone");
         }
 
     }

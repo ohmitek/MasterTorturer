@@ -53,30 +53,30 @@ public class PuzzleDCage : MonoBehaviour {
     void CheckLevel1() {
         //Check if where cage is and update its state to correct one
         if(cageState == CageState.ZeroLevel && transform.position.y < puzzleD.cageHeightlevels[1].y) {
-            transform.position = new Vector3(transform.position.x, puzzleD.cageHeightlevels[1].y);
+            transform.position = new Vector3(transform.position.x, puzzleD.cageHeightlevels[1].y, transform.position.z);
             cageState = CageState.FirstLevel;
         }
         else if (cageState == CageState.FirstLevel && transform.position.y < puzzleD.cageHeightlevels[2].y) {
-            transform.position = new Vector3(transform.position.x, puzzleD.cageHeightlevels[2].y);
+            transform.position = new Vector3(transform.position.x, puzzleD.cageHeightlevels[2].y, transform.position.z);
             cageState = CageState.SecondLevel;
         }
         else if (cageState == CageState.SecondLevel && transform.position.y < puzzleD.cageHeightlevels[3].y) {
-            transform.position = new Vector3(transform.position.x, puzzleD.cageHeightlevels[3].y);
+            transform.position = new Vector3(transform.position.x, puzzleD.cageHeightlevels[3].y, transform.position.z);
             cageState = CageState.ThirdLevel;
         }
     }
     void CheckLevel2() {
         //Check if where cage is and update its state to correct one
         if (cageState == CageState.ThirdLevel && transform.position.y > puzzleD.cageHeightlevels[2].y) {
-            transform.position = new Vector3(transform.position.x, puzzleD.cageHeightlevels[2].y);
+            transform.position = new Vector3(transform.position.x, puzzleD.cageHeightlevels[2].y, transform.position.z);
             cageState = CageState.SecondLevel;
         }
         else if (cageState == CageState.SecondLevel && transform.position.y > puzzleD.cageHeightlevels[1].y) {
-            transform.position = new Vector3(transform.position.x, puzzleD.cageHeightlevels[1].y);
+            transform.position = new Vector3(transform.position.x, puzzleD.cageHeightlevels[1].y, transform.position.z);
             cageState = CageState.FirstLevel;
         }
         else if (cageState == CageState.FirstLevel && transform.position.y > puzzleD.cageHeightlevels[0].y) {
-            transform.position = new Vector3(transform.position.x, puzzleD.cageHeightlevels[0].y);
+            transform.position = new Vector3(transform.position.x, puzzleD.cageHeightlevels[0].y, transform.position.z);
             cageState = CageState.ZeroLevel;
         }
     }
