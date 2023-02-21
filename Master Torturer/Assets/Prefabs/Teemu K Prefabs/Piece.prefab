@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 68714497271133126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.104, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.1, z: 0.5}
+  m_LocalScale: {x: 0.09886605, y: 0.01712309, z: 0.1244698}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -128,11 +128,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceId: 1
-  placeHolderColors:
-  - {r: 0.8584906, g: 0, b: 0, a: 1}
-  - {r: 0.36058205, g: 0.6076493, b: 0.6886792, a: 1}
-  - {r: 0.9433962, g: 0.73080254, b: 0.12904951, a: 1}
-  - {r: 0.24951048, g: 0.8396226, b: 0.51674736, a: 1}
-  - {r: 0.254717, g: 0.030037377, b: 0.19283783, a: 1}
-  - {r: 0.9433962, g: 0.048949808, b: 0.9042021, a: 1}
-  - {r: 0.05660379, g: 0.045122832, b: 0.045122832, a: 1}
+  piecePictures:
+  - {fileID: 2100000, guid: 921a81f38348b47b9b2979719d9ba09c, type: 2}
+  - {fileID: 2100000, guid: 797eccbc1f5b043689505785d65cc31a, type: 2}
+  - {fileID: 2100000, guid: f4d7d1cf2a3414adfbed153503563ef0, type: 2}
+  - {fileID: 2100000, guid: 4c616f8041e29d142a2fe3ed1474efb7, type: 2}
+  - {fileID: 2100000, guid: e15b47bd2125eb0419ae45713782000f, type: 2}
+  - {fileID: 2100000, guid: 984519ce09e570d4b89e61ed4c8ea274, type: 2}

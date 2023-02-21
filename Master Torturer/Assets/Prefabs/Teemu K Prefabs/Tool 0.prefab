@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 4001769083282449169}
   - component: {fileID: 4001769083282449170}
   m_Layer: 0
-  m_Name: Tool1
+  m_Name: Tool 0
   m_TagString: Torture Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

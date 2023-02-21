@@ -102,7 +102,7 @@ PrefabInstance:
     - target: {fileID: 68714497271133126, guid: 5c02f22c46352a245b903defc45feef4,
         type: 3}
       propertyPath: m_Name
-      value: Piece
+      value: Piece 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c02f22c46352a245b903defc45feef4, type: 3}
@@ -177,7 +177,7 @@ PrefabInstance:
     - target: {fileID: 68714497271133126, guid: 5c02f22c46352a245b903defc45feef4,
         type: 3}
       propertyPath: m_Name
-      value: Piece (3)
+      value: Piece 5
       objectReference: {fileID: 0}
     - target: {fileID: 68714497271133180, guid: 5c02f22c46352a245b903defc45feef4,
         type: 3}
@@ -257,7 +257,7 @@ PrefabInstance:
     - target: {fileID: 68714497271133126, guid: 5c02f22c46352a245b903defc45feef4,
         type: 3}
       propertyPath: m_Name
-      value: Piece (2)
+      value: Piece 4
       objectReference: {fileID: 0}
     - target: {fileID: 68714497271133180, guid: 5c02f22c46352a245b903defc45feef4,
         type: 3}
@@ -337,7 +337,7 @@ PrefabInstance:
     - target: {fileID: 68714497271133126, guid: 5c02f22c46352a245b903defc45feef4,
         type: 3}
       propertyPath: m_Name
-      value: Piece
+      value: Piece 2
       objectReference: {fileID: 0}
     - target: {fileID: 68714497271133180, guid: 5c02f22c46352a245b903defc45feef4,
         type: 3}
@@ -417,7 +417,7 @@ PrefabInstance:
     - target: {fileID: 68714497271133126, guid: 5c02f22c46352a245b903defc45feef4,
         type: 3}
       propertyPath: m_Name
-      value: Piece (4)
+      value: Piece 6
       objectReference: {fileID: 0}
     - target: {fileID: 68714497271133180, guid: 5c02f22c46352a245b903defc45feef4,
         type: 3}
@@ -497,7 +497,7 @@ PrefabInstance:
     - target: {fileID: 68714497271133126, guid: 5c02f22c46352a245b903defc45feef4,
         type: 3}
       propertyPath: m_Name
-      value: Piece (1)
+      value: Piece 3
       objectReference: {fileID: 0}
     - target: {fileID: 68714497271133180, guid: 5c02f22c46352a245b903defc45feef4,
         type: 3}

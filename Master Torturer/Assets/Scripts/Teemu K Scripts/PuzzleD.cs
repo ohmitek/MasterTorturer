@@ -37,6 +37,8 @@ public class PuzzleD : MonoBehaviour {
     }
 
     void Update() {
+        #region Debug test buttons, uncomment if you want to test
+        /*
         //Debug test buttons "Vasen vastapäivä" simulation
         if (Input.GetKeyDown(KeyCode.K) && puzzleState != PuzzleState.Finished) {
             //kutsu cagen script kautta meno suuntaa yms
@@ -56,6 +58,8 @@ public class PuzzleD : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.P) && puzzleState != PuzzleState.Finished) {
             cageScripts[2].StartCoroutine("MoveCageUp");
         }
+        */
+        #endregion
 
         //Check if cages are in correct spots to finish puzzle
         if (puzzleState != PuzzleState.Finished && cages[0].transform.position.y == cageHeightlevels[3].y && cages[1].transform.position.y == cageHeightlevels[2].y

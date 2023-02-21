@@ -22,6 +22,7 @@ public class PuzzleBTrigger : MonoBehaviour {
             piece.transform.parent = GameObject.Find("Found piece area").transform;
             piece.transform.position = new Vector3(puzzleB.foundPieceSlots[randId].position.x, puzzleB.foundPieceSlots[randId].position.y, puzzleB.foundPieceSlots[randId].position.z);
             piece.transform.rotation = puzzleB.foundPieceSlots[randId].rotation;
+            piece.transform.localScale = puzzleB.foundPieceSlots[randId].transform.localScale;
             //Add unused slot to used slots.
             puzzleB.foundPieceSlotsInUse[randId] = piece.transform;
         }
@@ -30,7 +31,7 @@ public class PuzzleBTrigger : MonoBehaviour {
     void OnTriggerEnter(Collider puzzlePiece) {
         if (puzzlePiece.tag == "Puzzle piece") {
             Debug.Log("Piece hit trigger area");
-            puzzlePiece.GetComponent<Rigidbody>().freezeRotation = true;
+            puzzlePiece.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             SetToRandomSlot(puzzlePiece.gameObject);
 
             #region Own slots approach
