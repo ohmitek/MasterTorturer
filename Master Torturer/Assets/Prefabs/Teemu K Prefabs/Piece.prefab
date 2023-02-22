@@ -129,9 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieceId: 1
   piecePictures:
-  - {fileID: 2100000, guid: 921a81f38348b47b9b2979719d9ba09c, type: 2}
-  - {fileID: 2100000, guid: 797eccbc1f5b043689505785d65cc31a, type: 2}
-  - {fileID: 2100000, guid: f4d7d1cf2a3414adfbed153503563ef0, type: 2}
-  - {fileID: 2100000, guid: 4c616f8041e29d142a2fe3ed1474efb7, type: 2}
-  - {fileID: 2100000, guid: e15b47bd2125eb0419ae45713782000f, type: 2}
-  - {fileID: 2100000, guid: 984519ce09e570d4b89e61ed4c8ea274, type: 2}
+  - {fileID: 2100000, guid: 0659de6395f3432439bc58690e0e2085, type: 2}
+  - {fileID: 2100000, guid: bc157bcb4789f7c438907b030fd35164, type: 2}
+  - {fileID: 2100000, guid: 4c7f897553876334da82e3ba0c0dc9c8, type: 2}
+  - {fileID: 2100000, guid: 59fcdfb2cfce1904d96e7aace181f97d, type: 2}
+  - {fileID: 2100000, guid: 11e23442f166435408fa6af0a69737d9, type: 2}
+  - {fileID: 2100000, guid: 60e1587c481b2d54f963a194d217d945, type: 2}
