@@ -5,9 +5,11 @@ public class AudioOptionsManager : MonoBehaviour
 {
     public static float musicVolume { get; private set; }
     public static float soundEffectsVolume { get; private set; }
+    public static float jumpScareVolume { get; private set; }
 
     [SerializeField] private TextMeshProUGUI musicSliderText;
     [SerializeField] private TextMeshProUGUI soundEffectsSliderText;
+    [SerializeField] private TextMeshProUGUI jumpScareSliderText;
 
     public void OnMusicSliderValueChange(float value)
     {
@@ -22,6 +24,14 @@ public class AudioOptionsManager : MonoBehaviour
         soundEffectsVolume = value;
 
         soundEffectsSliderText.text = ((int)(value * 100)).ToString();
+        AudioManager.Instance.UpdateMixerVolume();
+    }
+
+        public void OnjumpScareSliderValueChange(float value)
+    {
+        soundEffectsVolume = value;
+
+        jumpScareSliderText.text = ((int)(value * 100)).ToString();
         AudioManager.Instance.UpdateMixerVolume();
     }
 }

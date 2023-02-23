@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioMixerGroup musicMixerGroup;
     [SerializeField] private AudioMixerGroup soundEffectsMixerGroup;
+    [SerializeField] private AudioMixerGroup jumpScareMixerGroup;
     [SerializeField] private Sound[] sounds;
 
     private void Awake()
@@ -63,6 +64,7 @@ public class AudioManager : MonoBehaviour
     {
         musicMixerGroup.audioMixer.SetFloat("Music Volume", Mathf.Log10(AudioOptionsManager.musicVolume) * 25);
         soundEffectsMixerGroup.audioMixer.SetFloat("Sound Effects Volume", Mathf.Log10(AudioOptionsManager.soundEffectsVolume) * 25);
+        jumpScareMixerGroup.audioMixer.SetFloat("Jumpscare Volume", Mathf.Log10(AudioOptionsManager.jumpScareVolume) * 25);
     }
 
     

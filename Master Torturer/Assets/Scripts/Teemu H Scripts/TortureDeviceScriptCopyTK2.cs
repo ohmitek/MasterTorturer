@@ -15,7 +15,7 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
 
     //AudioManager audioManager = AudioManager.Instance;
 
-    public GameObject ringPrefab; // reference to the ring prefab (REWARD from Puzzle A)
+    public GameObject LeftValve; // reference to the ring prefab (REWARD from Puzzle A)
 
     private bool[] devicesInPlace;
     private bool tortureStarted;
@@ -28,6 +28,7 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
 
     //Teemu H
     public bool puzzleAFinished;
+    public bool leftValveInstantiated;
 
     private void Start() {
         devicesInPlace = new bool[tortureDevices.Length];
@@ -36,6 +37,13 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
     private void Update() {
         //Modified this to use bool
         if (puzzleBFinished) CheckTortureOrder();
+
+        if (puzzleAFinished && !leftValveInstantiated) {
+            Vector3 ringPosition = new Vector3(-5.424f, 0.100f, 1.767f); // position to instantiate the ring
+            Instantiate(LeftValve, ringPosition, Quaternion.identity); // instantiate the Left Valve at the specified position (REWARD from Puzzle A)
+            leftValveInstantiated = true; // set the flag to indicate that the valve has been instantiated
+        }
+
     }
 
     public void AddTortuteItemToList(GameObject device, int tortureSlot) {
@@ -164,7 +172,7 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
 
             virtualTortureCamera.Priority = 11;
 
-            // Wait for 8 seconds and then change the camera priority back to 1
+            // Wait for 8 seconds and then change the camera priority to 12
             StartCoroutine(ResetCameraPriority());
 
             tortureStarted = true;
@@ -172,19 +180,24 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
     }
 
     private IEnumerator ResetCameraPriority() {
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(6f);
         virtualTortureCameraZoom.Priority = 12;
         StartCoroutine(ResetCameraPriorityAfterDelay());
     }
 
     private IEnumerator ResetCameraPriorityAfterDelay()
     {
-        yield return new WaitForSeconds(10f);
+        AudioManager.Instance.Play("MaleScream02");
+        yield return new WaitForSeconds(7f);
         virtualTortureCameraZoom.Priority = 1;
         virtualTortureCamera.Priority = 1;
-        Vector3 ringPosition = new Vector3(-5.424f, 0.100f, 1.767f); // position to instantiate the ring
-        Instantiate(ringPrefab, ringPosition, Quaternion.identity); // instantiate the ring prefab at the specified position
+        //Vector3 ringPosition = new Vector3(-5.424f, 0.100f, 1.767f); // position to instantiate the ring
+        //Instantiate(LeftValve, ringPosition, Quaternion.identity); // instantiate the Left Valve at the specified position (REWARD from Puzzle A)
         puzzleAFinished = true;
+        //if (puzzleAFinished = true;) {
+        //            Vector3 ringPosition = new Vector3(-5.424f, 0.100f, 1.767f); // position to instantiate the ring
+        //            Instantiate(LeftValve, ringPosition, Quaternion.identity); // instantiate the Left Valve at the specified position (REWARD from Puzzle A)
+        //}
     }
 
 
