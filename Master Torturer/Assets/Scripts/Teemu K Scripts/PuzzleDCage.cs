@@ -6,18 +6,21 @@ public enum CageState { ZeroLevel, FirstLevel, SecondLevel, ThirdLevel }
 public class PuzzleDCage : MonoBehaviour {
     public CageState cageState;
     PuzzleD puzzleD;
+    AudioManager aM;
     [SerializeField] float cageMoveSpeed;
 
     void Start() {
         cageState = CageState.ZeroLevel;
         puzzleD = FindObjectOfType<PuzzleD>();
+        aM = FindObjectOfType<AudioManager>();
     }
 
     void MoveCage(Vector3 direction) {
         transform.position += cageMoveSpeed * Time.deltaTime * direction;
     }
     
-    public IEnumerator MoveCageDown() { 
+    public IEnumerator MoveCageDown() {
+        aM.Play("chage_move");
         while (cageState == CageState.ZeroLevel && transform.position.y > puzzleD.cageHeightlevels[1].y) {
             yield return new WaitForSeconds(Time.deltaTime);
             MoveCage(Vector3.down);
@@ -31,9 +34,11 @@ public class PuzzleDCage : MonoBehaviour {
             MoveCage(Vector3.down);
         }
         CheckLevel1();
+        aM.Stop("chage_move");
         //Debug.Log("Olet t‰‰ll‰ 1");
     }
     public IEnumerator MoveCageUp() {
+        aM.Play("chage_move");
         while (cageState == CageState.ThirdLevel && transform.position.y < puzzleD.cageHeightlevels[2].y) {
             yield return new WaitForSeconds(Time.deltaTime);
             MoveCage(Vector3.up);
@@ -47,6 +52,7 @@ public class PuzzleDCage : MonoBehaviour {
             MoveCage(Vector3.up);
         }
         CheckLevel2();
+        aM.Stop("chage_move");
         //Debug.Log("Olet t‰‰ll‰ 2");
     }
 

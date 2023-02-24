@@ -17,12 +17,12 @@ public class PuzzleDValve : MonoBehaviour {
 
     void Update() {
         //Debug testing
-        if (Input.GetKeyDown(KeyCode.N)) {
-            StartCoroutine(RotateCounterClockwise());
-        }
-        if (Input.GetKeyDown(KeyCode.M)) {
-            StartCoroutine(RotateClockwise());
-        }
+        //if (Input.GetKeyDown(KeyCode.N)) {
+        //    StartCoroutine(RotateCounterClockwise());
+        //}
+        //if (Input.GetKeyDown(KeyCode.M)) {
+        //    StartCoroutine(RotateClockwise());
+        //}
 
         if (attached) {
             currentEulerAngles = new Vector3(currentEulerAngles.x, 90f, 90f);

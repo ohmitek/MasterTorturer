@@ -33,11 +33,13 @@ public class GameManager : MonoBehaviour {
 
     public void WinGame() {
         gameState = GameState.GameWon;
-        //Roll credits or something
+        Debug.Log("You have won the game!");
+        Application.Quit();
     }
     public void GameOver() {
         Debug.Log("Game over!");
         gameState = GameState.GameOver;
+        Application.Quit();
     }
 
     public void PuzzleDone() {

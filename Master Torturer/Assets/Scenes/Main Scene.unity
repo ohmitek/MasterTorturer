@@ -1190,6 +1190,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1338906445}
     m_Modifications:
+    - target: {fileID: 269543583, guid: 446a7c31558a7774c8e4c56209427017, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.38817352
+      objectReference: {fileID: 0}
+    - target: {fileID: 269543583, guid: 446a7c31558a7774c8e4c56209427017, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.2633309
+      objectReference: {fileID: 0}
+    - target: {fileID: 269543583, guid: 446a7c31558a7774c8e4c56209427017, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.11676586
+      objectReference: {fileID: 0}
     - target: {fileID: 3262657297278363861, guid: 446a7c31558a7774c8e4c56209427017,
         type: 3}
       propertyPath: m_RootOrder
@@ -1827,8 +1839,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
-  m_ChildCameras:
-  - {fileID: 58289929}
+  m_ChildCameras: []
   m_ActivateAfter: 0
   m_MinDuration: 0
   m_RandomizeChoice: 0
@@ -3916,8 +3927,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
-  m_ChildCameras:
-  - {fileID: 1700257148}
+  m_ChildCameras: []
   m_ActivateAfter: 0
   m_MinDuration: 0
   m_RandomizeChoice: 0
@@ -5485,8 +5495,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
-  m_ChildCameras:
-  - {fileID: 1059637984}
+  m_ChildCameras: []
   m_ActivateAfter: 0
   m_MinDuration: 0
   m_RandomizeChoice: 0
@@ -5928,8 +5937,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
-  m_ChildCameras:
-  - {fileID: 768790802}
+  m_ChildCameras: []
   m_ActivateAfter: 0
   m_MinDuration: 0
   m_RandomizeChoice: 0

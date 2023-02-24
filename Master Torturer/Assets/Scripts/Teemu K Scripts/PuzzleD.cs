@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using Cinemachine;
 
 public class PuzzleD : MonoBehaviour {
     public PuzzleState puzzleState;
@@ -60,7 +61,6 @@ public class PuzzleD : MonoBehaviour {
         }
         */
         #endregion
-
         //Check if cages are in correct spots to finish puzzle
         if (puzzleState != PuzzleState.Finished && cages[0].transform.position.y == cageHeightlevels[3].y && cages[1].transform.position.y == cageHeightlevels[2].y
             && cages[2].transform.position.y == cageHeightlevels[1].y) {
@@ -72,11 +72,34 @@ public class PuzzleD : MonoBehaviour {
             Destroy(valves[0].valveRb);
             Destroy(valves[1].valveRb);
 
-            //Play Puzzle is done sound
+            //Play Puzzle is done sound and activate reward camera
             AudioManager aM = FindObjectOfType<AudioManager>();
             aM.Play("Puzzledone");
+            StartCoroutine(RewardCamera());
+            StartCoroutine(RewardCameraFadeOut());
         }
 
+    }
+
+    IEnumerator RewardCamera() {
+        CinemachineVirtualCamera dollyCam = GameObject.Find("DollyCamera").GetComponent<CinemachineVirtualCamera>();
+        CinemachineDollyCart dollyCart = FindObjectOfType<CinemachineDollyCart>();
+        CinemachineSmoothPath dollyTrack = FindObjectOfType<CinemachineSmoothPath>();
+        GameManager gM = FindObjectOfType<GameManager>();
+        yield return new WaitForSeconds(1);
+        dollyCam.Priority = 11;
+        dollyCart.m_Speed = 1f;
+        yield return new WaitUntil(() => dollyCart.m_Position >= dollyTrack.PathLength);
+        yield return new WaitForSeconds(1f); //Extra time to make sure dolly cart and fadeout have finished
+        gM.WinGame();
+    }
+    IEnumerator RewardCameraFadeOut() {
+        CinemachineStoryboard storyboard = GameObject.Find("DollyCamera").GetComponent<CinemachineStoryboard>();
+        yield return new WaitForSeconds(1);
+        while(storyboard.m_Alpha <= 1f) {
+            storyboard.m_Alpha += 0.01f;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     //Not like this
