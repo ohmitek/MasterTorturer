@@ -107,10 +107,10 @@ public class PuzzleB : MonoBehaviour {
                         TortureDeviceScriptCopyTK2 puzzleA = FindObjectOfType<TortureDeviceScriptCopyTK2>();
                         puzzleState = PuzzleState.Finished;
                         //Instaniate rewards and "mark" puzzle as finished in GameManager
-                        Instantiate(puzzleRewards[0], rewardSpawnSpots[0].position, puzzleRewards[0].transform.rotation);
+                        Instantiate(puzzleRewards[0], rewardSpawnSpots[0].position, rewardSpawnSpots[0].transform.rotation);
                         
                         //Item that is added to Puzzle A Torture Devices list.
-                        puzzleA.AddTortuteItemToList(Instantiate(puzzleRewards[1], rewardSpawnSpots[1].position, puzzleRewards[1].transform.rotation), 0);
+                        puzzleA.AddTortuteItemToList(Instantiate(puzzleRewards[1], rewardSpawnSpots[1].position, rewardSpawnSpots[1].transform.rotation), 0);
                         puzzleA.puzzleBFinished = true;
                         gm.PuzzleDone();
 

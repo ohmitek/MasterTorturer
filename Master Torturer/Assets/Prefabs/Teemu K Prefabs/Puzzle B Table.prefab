@@ -339,7 +339,7 @@ MonoBehaviour:
   pieceDistanceValue: 0.03
   piecesInCorrectSpot: 0
   puzzleRewards:
-  - {fileID: 5961683804679738958, guid: b96ae7d5b5ca72747a2dfdee6a453e09, type: 3}
+  - {fileID: 6987289955310369066, guid: 1da0f014a0f366743940d00b20a1f453, type: 3}
   - {fileID: 4001769081840600799, guid: 3132849059943254291844622f452d6f, type: 3}
   rewardSpawnSpots:
   - {fileID: 9204961494974086256}
@@ -667,14 +667,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9204961494974086259}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9204961496288360608}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &9204961495103059433
 GameObject:
   m_ObjectHideFlags: 0
