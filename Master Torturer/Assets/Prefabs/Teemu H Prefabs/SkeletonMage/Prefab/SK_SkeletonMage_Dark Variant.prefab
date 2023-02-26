@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100150, guid: dd44fb4bda2cdda41b004b8a8088893b, type: 3}
       propertyPath: m_Name
-      value: SK_SkeletonMage_Dark
+      value: SK_SkeletonMage_Dark Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 400150, guid: dd44fb4bda2cdda41b004b8a8088893b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400150, guid: dd44fb4bda2cdda41b004b8a8088893b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24,6 +28,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400150, guid: dd44fb4bda2cdda41b004b8a8088893b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400150, guid: dd44fb4bda2cdda41b004b8a8088893b, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -36,14 +44,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400150, guid: dd44fb4bda2cdda41b004b8a8088893b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400150, guid: dd44fb4bda2cdda41b004b8a8088893b, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400150, guid: dd44fb4bda2cdda41b004b8a8088893b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -53,6 +53,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400150, guid: dd44fb4bda2cdda41b004b8a8088893b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: dd44fb4bda2cdda41b004b8a8088893b, type: 3}
+      propertyPath: m_Quality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: dd44fb4bda2cdda41b004b8a8088893b, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: dd44fb4bda2cdda41b004b8a8088893b, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: dd44fb4bda2cdda41b004b8a8088893b, type: 3}
+      propertyPath: m_StaticShadowCaster
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

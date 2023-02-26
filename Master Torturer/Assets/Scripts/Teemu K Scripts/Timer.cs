@@ -30,6 +30,7 @@ public class Timer : MonoBehaviour {
         //Possible events that can happen when timer reaches certain point.
         if (time2 <= 0 && !point4) {
             point4 = true;
+            mm.MoveToNextPosition();
             gm.GameOver();
         } 
         else if (time2 <= maxTime * 0.3 && !point3) {
