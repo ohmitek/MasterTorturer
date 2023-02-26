@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 68714497271133123}
   - component: {fileID: 68714497271133120}
   - component: {fileID: 68714497271133180}
+  - component: {fileID: 2009779541}
+  - component: {fileID: 2009779548}
   m_Layer: 8
   m_Name: Piece
   m_TagString: Puzzle piece
@@ -135,3 +137,33 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 59fcdfb2cfce1904d96e7aace181f97d, type: 2}
   - {fileID: 2100000, guid: 11e23442f166435408fa6af0a69737d9, type: 2}
   - {fileID: 2100000, guid: 60e1587c481b2d54f963a194d217d945, type: 2}
+--- !u!114 &2009779541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68714497271133126}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.53640085, g: 0.7723806, b: 0.9245283, a: 1}
+  outlineWidth: 4.5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &2009779548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68714497271133126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a93fc87db7f03045b69dee037d36cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
