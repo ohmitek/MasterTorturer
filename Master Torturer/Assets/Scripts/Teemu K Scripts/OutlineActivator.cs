@@ -13,7 +13,8 @@ public class OutlineActivator : MonoBehaviour {
 
 
         //Try to activate outline from puzzle piece tagged object
-        if (Physics.Raycast(ray, out hit, rayRange) && hit.collider.tag == "Puzzle piece") {
+        if (Physics.Raycast(ray, out hit, rayRange) && (hit.collider.CompareTag("Puzzle piece") || hit.collider.CompareTag("Valve")
+            || hit.collider.CompareTag("Torture Tool"))) {
             Outline outline = hit.collider.gameObject.GetComponent<Outline>();
             outline.enabled = true;
         }

@@ -77,8 +77,8 @@ public class PuzzleB : MonoBehaviour {
                 Debug.DrawRay(mouseRay.origin, mouseRay.direction * ray.distance, Color.red);
                 ray.transform.position = new Vector3(ray.point.x, ray.transform.position.y, ray.point.z);
 
-                //Rotate while holding a piece, kind of works. Needs fine tuning
-                if(Input.GetKeyDown(KeyCode.E)) ray.transform.Rotate(0f, 90f, 0f, Space.World);
+                //Rotate while holding a piece, kind of works. Commented out, because it's buggy
+                //if(Input.GetKeyDown(KeyCode.E)) ray.transform.Rotate(0f, 90f, 0f, Space.World);
             }
             else {
                 Debug.DrawRay(mouseRay.origin, mouseRay.direction * ray.distance, Color.white);

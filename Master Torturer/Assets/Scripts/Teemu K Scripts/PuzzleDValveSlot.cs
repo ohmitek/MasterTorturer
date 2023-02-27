@@ -10,7 +10,7 @@ public class PuzzleDValveSlot : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         PuzzleDValve valve = other.GetComponent<PuzzleDValve>();
-        HighlightOutline outline = other.gameObject.GetComponent<HighlightOutline>();
+        //HighlightOutline outline = other.gameObject.GetComponent<HighlightOutline>();
 
         if(other.tag == "Valve" && valve.valveType == ValveType.Left) {
             Debug.Log("Valve entered trigger");
@@ -18,7 +18,7 @@ public class PuzzleDValveSlot : MonoBehaviour {
             other.GetComponent<Rigidbody>().useGravity = false;
             other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
             other.GetComponent<Rigidbody>().isKinematic = true;
-            outline.enabled = false;
+            //outline.enabled = false;
             other.transform.parent = GameObject.Find("Valves").transform;
             other.transform.position = transform.position;
 
