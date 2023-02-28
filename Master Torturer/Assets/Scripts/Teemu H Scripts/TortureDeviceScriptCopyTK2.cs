@@ -168,9 +168,8 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
         } else {
             Debug.Log("TORTURE STARTED!");
 
-            AudioManager.Instance.Play("Puzzledone");
-
             virtualTortureCamera.Priority = 11;
+            AudioManager.Instance.Play("MaleScream02");
 
             // Wait for 8 seconds and then change the camera priority to 12
             StartCoroutine(ResetCameraPriority());
@@ -180,19 +179,21 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
     }
 
     private IEnumerator ResetCameraPriority() {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(10f);
+        AudioManager.Instance.Play("MaleScream09");        
         virtualTortureCameraZoom.Priority = 12;
         StartCoroutine(ResetCameraPriorityAfterDelay());
     }
 
     private IEnumerator ResetCameraPriorityAfterDelay()
     {
-        AudioManager.Instance.Play("MaleScream02");
-        yield return new WaitForSeconds(7f);
+        
+        yield return new WaitForSeconds(3f);
         virtualTortureCameraZoom.Priority = 1;
         virtualTortureCamera.Priority = 1;
         //Vector3 ringPosition = new Vector3(-5.424f, 0.100f, 1.767f); // position to instantiate the ring
         //Instantiate(LeftValve, ringPosition, Quaternion.identity); // instantiate the Left Valve at the specified position (REWARD from Puzzle A)
+        AudioManager.Instance.Play("Puzzledone");
         puzzleAFinished = true;
         //if (puzzleAFinished = true;) {
         //            Vector3 ringPosition = new Vector3(-5.424f, 0.100f, 1.767f); // position to instantiate the ring

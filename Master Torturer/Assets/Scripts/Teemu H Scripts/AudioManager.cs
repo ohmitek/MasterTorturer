@@ -31,6 +31,9 @@ public class AudioManager : MonoBehaviour
                 case Sound.AudioTypes.music:
                     s.source.outputAudioMixerGroup = musicMixerGroup;
                     break;
+                case Sound.AudioTypes.jumpScare:
+                    s.source.outputAudioMixerGroup = jumpScareMixerGroup;
+                    break;
             }
 
             if (s.playOnAwake)

@@ -8,7 +8,7 @@ public class Jumpscare : MonoBehaviour
     [SerializeField] private CinemachineClearShot virtualJumpscareCamera;
     [SerializeField] private CinemachineClearShot virtualJumpscareFallCamera;
 
-    //public GameObject crawler; // THIS IS THE SCARY THING
+    public GameObject deadmanx; // THIS IS THE SCARY THING
 
     private bool jumpscareTriggered = false;
 
@@ -20,12 +20,12 @@ public class Jumpscare : MonoBehaviour
             if (puzzleA.puzzleAFinished && puzzleA.leftValveInstantiated)
             {
                 Debug.Log("JUMPSCARE ENABLED!");
-                //Vector3 crawlerPosition = new Vector3(-5.941355f, 0.05f, 2.165852f);
-                //Quaternion crawlerRotation = Quaternion.Euler(0.0274106748f, 198.334625f, 0.00338907214f); // create a new Quaternion with the desired rotation
-                //GameObject newCrawler = Instantiate(crawler, crawlerPosition, crawlerRotation); // instantiate the crawler object with the desired position and rotation
+                AudioManager.Instance.Play("Slam10");
+                Vector3 deadmanxPosition = new Vector3(-6.098f, 0.11f, 2.215924f);
+                Quaternion deadmanxRotation = Quaternion.Euler(0.0274106748f, 124.526f, 0.00338907214f); // create a new Quaternion with the desired rotation
+                GameObject newdeadmanx = Instantiate(deadmanx, deadmanxPosition, deadmanxRotation); // instantiate the crawler object with the desired position and rotation
 
                 virtualJumpscareCamera.Priority = 13;
-                AudioManager.Instance.Play("Slam10");
                 StartCoroutine(CameraPriority14());
                 jumpscareTriggered = true;
             }
@@ -33,14 +33,14 @@ public class Jumpscare : MonoBehaviour
     }
 
     private IEnumerator CameraPriority14() {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         virtualJumpscareFallCamera.Priority = 14;
         StartCoroutine(ResetCameraPriorityAfterDelay());
     }
 
     private IEnumerator ResetCameraPriorityAfterDelay()
     {
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(4f);
         virtualJumpscareCamera.Priority = 1;
         virtualJumpscareFallCamera.Priority = 1;
     }

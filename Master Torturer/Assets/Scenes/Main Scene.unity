@@ -721,15 +721,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58289926}
-  m_LocalRotation: {x: -0.0042476896, y: 0.98313504, z: -0.15756346, w: -0.09274231}
-  m_LocalPosition: {x: -0.0906, y: -0.245, z: -5.491}
+  m_LocalRotation: {x: -0.022263546, y: 0.9488214, z: -0.1424739, w: -0.28096873}
+  m_LocalPosition: {x: 0.22627616, y: -0.24493068, z: -5.1384735}
   m_LocalScale: {x: 0.68088996, y: 1.1007909, z: 0.9964623}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 320247804}
   m_Father: {fileID: 352923166}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 18.095, y: -169.022, z: 1.258}
+  m_LocalEulerAnglesHint: {x: 16.432, y: -146.683, z: 2.259}
 --- !u!114 &58289928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,11 +1345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 269543583, guid: 446a7c31558a7774c8e4c56209427017, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.2633309
+      value: 0.263331
       objectReference: {fileID: 0}
     - target: {fileID: 269543583, guid: 446a7c31558a7774c8e4c56209427017, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.11676586
+      value: 0.11676588
       objectReference: {fileID: 0}
     - target: {fileID: 3262657297278363861, guid: 446a7c31558a7774c8e4c56209427017,
         type: 3}
@@ -3797,15 +3797,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768790799}
-  m_LocalRotation: {x: -0.3081626, y: 0.2946139, z: -0.1011376, w: -0.89889354}
-  m_LocalPosition: {x: 1.214, y: 1.568, z: 0.085}
+  m_LocalRotation: {x: -0, y: -0.48936266, z: -0, w: 0.8720804}
+  m_LocalPosition: {x: 0.311, y: 0.041000128, z: 1.1105}
   m_LocalScale: {x: 0.72989327, y: 1.0191475, z: 0.97145975}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1692515479}
   m_Father: {fileID: 1510296190}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 37.851, y: -36.287, z: 0.018}
+  m_LocalEulerAnglesHint: {x: 0, y: -58.597, z: 0}
 --- !u!114 &768790801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4931,52 +4931,52 @@ MonoBehaviour:
   - audioType: 0
     source: {fileID: 0}
     clipName: Metalsound
-    audioClip: {fileID: 8300000, guid: b55001732c5559d40b717d01474356a2, type: 3}
+    audioClip: {fileID: 8300000, guid: 02ccca5cc045cc54c9c355206fa1c6ef, type: 3}
     isLoop: 0
     playOnAwake: 0
-    volume: 0.3
+    volume: 1
   - audioType: 0
     source: {fileID: 0}
     clipName: Metalsound2
-    audioClip: {fileID: 8300000, guid: 301128cc2e9850f4c97eeac2710e31b1, type: 3}
+    audioClip: {fileID: 8300000, guid: 74c8f48ed6de2c04897580f3228511c0, type: 3}
     isLoop: 0
     playOnAwake: 0
-    volume: 0.3
+    volume: 1
   - audioType: 1
     source: {fileID: 0}
     clipName: SUBBassRumbleLoop
     audioClip: {fileID: 8300000, guid: 380f8ccea684e2342bc119dd6759f189, type: 3}
     isLoop: 1
     playOnAwake: 1
-    volume: 0.3
+    volume: 1
   - audioType: 0
     source: {fileID: 0}
     clipName: chage_move
-    audioClip: {fileID: 8300000, guid: 6570c5e3c6643aa4f989f13efc683513, type: 3}
+    audioClip: {fileID: 8300000, guid: 2883c0dc77b0b0d4d9183f2085f0c630, type: 3}
     isLoop: 0
     playOnAwake: 0
-    volume: 0.5
+    volume: 1
   - audioType: 0
     source: {fileID: 0}
     clipName: MaleScream02
     audioClip: {fileID: 8300000, guid: 3a9f49f814ae0e94f8ed45591d99b234, type: 3}
     isLoop: 0
     playOnAwake: 0
-    volume: 0.1
-  - audioType: 0
-    source: {fileID: 0}
-    clipName: MaleScream02
-    audioClip: {fileID: 8300000, guid: 3a9f49f814ae0e94f8ed45591d99b234, type: 3}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 0.1
+    volume: 1
   - audioType: 2
     source: {fileID: 0}
     clipName: Slam10
     audioClip: {fileID: 8300000, guid: ddda12a3e85e944bbabbf831005e8648, type: 3}
     isLoop: 0
     playOnAwake: 0
-    volume: 0.2
+    volume: 1
+  - audioType: 0
+    source: {fileID: 0}
+    clipName: MaleScream09
+    audioClip: {fileID: 8300000, guid: ee9dff0253a8a6c4fb212e432237e89b, type: 3}
+    isLoop: 0
+    playOnAwake: 0
+    volume: 1
 --- !u!1001 &1142310357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7057,15 +7057,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700257145}
-  m_LocalRotation: {x: 0.19041556, y: -0.37099758, z: 0.078145355, w: 0.9055363}
-  m_LocalPosition: {x: -0.032, y: 0.13300014, z: 1.21}
+  m_LocalRotation: {x: 0.08463732, y: -0.4733545, z: 0.0390616, w: 0.8759259}
+  m_LocalPosition: {x: 1.536205, y: 0.583997, z: 0.51804566}
   m_LocalScale: {x: 0.68297505, y: 1.0819027, z: 1.0078875}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 963123948}
   m_Father: {fileID: 897069249}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 23.756, y: -44.555, z: 0.015}
+  m_LocalEulerAnglesHint: {x: 10.676, y: -56.838, z: -0.682}
 --- !u!114 &1700257147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7401,6 +7401,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virtualJumpscareCamera: {fileID: 352923167}
   virtualJumpscareFallCamera: {fileID: 1441095523}
+  deadmanx: {fileID: 4151385035823266260, guid: 9f37bde2e51689944983f5631acf8e18,
+    type: 3}
 --- !u!1 &1742891602
 GameObject:
   m_ObjectHideFlags: 0

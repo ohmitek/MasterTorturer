@@ -13,5 +13,5 @@ public class Sound
     public bool playOnAwake;
 
     [Range(0, 1)]
-    public float volume = 0.8f;
+    public float volume = 1.0f;
 }
