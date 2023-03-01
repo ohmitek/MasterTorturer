@@ -13,8 +13,9 @@ using Cinemachine;
 
 public class MouseLooks : MonoBehaviour
 {
-   
+    GameManager gM;
     public float mouseSensitivity = 200f;
+    [SerializeField] GameObject aimDot;
 
     public Transform playerBody;
 
@@ -26,6 +27,7 @@ public class MouseLooks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gM = FindObjectOfType<GameManager>();
         Cursor.lockState = CursorLockMode.Locked;
         transform.position = playerBody.position;
 
@@ -34,6 +36,10 @@ public class MouseLooks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Set aim dot to be visible when player camere is active, otherwise not.
+        if (CinemachineCore.Instance.IsLive(playerCam)) aimDot.SetActive(true);
+        else aimDot.SetActive(false);
+        mouseSensitivity = gM.slider.value;
 
         //This code is getting the input values for the mouse's X and Y axis.
         //The Input.GetAxis function is used to get the value of the axis, in this case "Mouse X" and "Mouse Y".

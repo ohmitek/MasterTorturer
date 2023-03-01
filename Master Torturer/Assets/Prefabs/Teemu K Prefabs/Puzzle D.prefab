@@ -424,7 +424,10 @@ MonoBehaviour:
   puzzleState: 0
   gageStartPos: []
   cageHeightlevels: []
-  cages: []
+  cages:
+  - {fileID: 8330220278808538306}
+  - {fileID: 8330220278188571229}
+  - {fileID: 8330220277975639640}
   cageScripts: []
   cageLevelDistance: 1
 --- !u!1 &3262657297974529692

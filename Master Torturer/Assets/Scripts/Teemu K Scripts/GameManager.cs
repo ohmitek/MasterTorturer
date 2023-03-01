@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum GameState { Paused, GameOver, GameWon, InGame }
 
@@ -9,8 +10,16 @@ public class GameManager : MonoBehaviour {
     public GameState gameState;
     [Tooltip("Keep this in the inspector as 0.")][SerializeField]int PuzzlesDone;
 
+    [SerializeField] GameObject mouseSlider;
+    public Slider slider;
+    [SerializeField] float maxSensitivity;
+
+
     void Start() {
         gameState = GameState.InGame;
+        slider = mouseSlider.GetComponentInChildren<Slider>();
+        slider.maxValue = maxSensitivity;
+        slider.value = maxSensitivity;
     }
 
     void Update() {
@@ -24,11 +33,8 @@ public class GameManager : MonoBehaviour {
             break;
         }
 
-        /* TODO
-         * if (PuzzlesDone == puzzleAmount && gameState != GameState.GameWon){
-         *      WinGame();
-         * }
-         */
+        MouseSlider();
+
     }
 
     public void WinGame() {
@@ -44,5 +50,21 @@ public class GameManager : MonoBehaviour {
 
     public void PuzzleDone() {
         PuzzlesDone++;
+    }
+
+    //Normally i would make a separate script for this, but it is what it is
+    void MouseSlider() {
+        //Slider for mouse sensitivity
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (mouseSlider.activeSelf == true) {
+                Cursor.lockState = CursorLockMode.Locked;
+                mouseSlider.SetActive(false);
+            }
+            else if (mouseSlider.activeSelf == false) {
+                Cursor.lockState = CursorLockMode.None;
+                mouseSlider.SetActive(true);
+                slider.maxValue = maxSensitivity;
+            }
+        }
     }
 }

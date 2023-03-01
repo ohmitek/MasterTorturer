@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using Cinemachine;
 
@@ -16,8 +14,8 @@ public class PuzzleD : MonoBehaviour {
     void Start() {
         puzzleState = PuzzleState.Unfinished;
 
-        //Find all cages from the scene
-        cages = GameObject.FindGameObjectsWithTag("Cage");
+        ////Find all cages from the scene
+        //cages = GameObject.FindGameObjectsWithTag("Cage");
 
         //Create new empty array with amount of levels wanted
         cageHeightlevels = new Vector3[4];

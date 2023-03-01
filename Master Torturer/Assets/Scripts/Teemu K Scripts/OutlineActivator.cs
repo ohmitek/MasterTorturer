@@ -4,7 +4,7 @@ using UnityEngine;
 
 //This script only basicly tries to activate "Outline" script that is from the Asset store 
 public class OutlineActivator : MonoBehaviour {
-    float rayRange = 10f;
+    float rayRange = 1f;
 
     void Update() {
         //Cast the ray from main camera
