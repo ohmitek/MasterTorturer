@@ -189,7 +189,7 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
     }
 
     private IEnumerator ResetCameraPriority() {
-        yield return new WaitForSeconds(9f);        
+        yield return new WaitForSeconds(9f);
         virtualTortureCameraZoom.Priority = 12;
         AudioManager.Instance.Stop("SUBBassRumbleLoop");
         StartCoroutine(ResetCameraPriorityAfterDelay());
@@ -197,14 +197,14 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
 
     private IEnumerator ResetCameraPriorityAfterDelay()
     {
-        
+
         yield return new WaitForSeconds(4f);
         virtualTortureCameraZoom.Priority = 1;
         virtualTortureCamera.Priority = 1;
         AudioManager.Instance.Play("Puzzledone");
         puzzleAFinished = true;
         AudioManager.Instance.Play("LeftValveDrop");
-        AudioManager.Instance.Play("SUBBassRumble2(Loop)"); 
+        AudioManager.Instance.Play("SUBBassRumble2(Loop)");
     }
 
 
