@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PuzzleBTrigger : MonoBehaviour {
     PuzzleB puzzleB;
+    ItemPickUp pickUp;
 
     void Start() {
         puzzleB = FindObjectOfType<PuzzleB>();
+        pickUp = FindObjectOfType<ItemPickUp>();
     }
 
     void SetToRandomSlot(GameObject piece) {
@@ -30,6 +32,7 @@ public class PuzzleBTrigger : MonoBehaviour {
 
     void OnTriggerEnter(Collider puzzlePiece) {
         if (puzzlePiece.tag == "Puzzle piece") {
+            pickUp.DropObject();
             Debug.Log("Piece hit trigger area");
             puzzlePiece.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             SetToRandomSlot(puzzlePiece.gameObject);

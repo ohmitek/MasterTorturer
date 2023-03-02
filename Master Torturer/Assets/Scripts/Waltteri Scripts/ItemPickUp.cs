@@ -95,7 +95,7 @@ public class ItemPickUp : MonoBehaviour
         }
     }
 
-    void DropObject()
+    public void DropObject()
     {
         holdObjRB.useGravity = true;
         holdObjRB.drag = 1;

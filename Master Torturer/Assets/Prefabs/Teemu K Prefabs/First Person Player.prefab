@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holdArea: {fileID: 2097579355641480435}
-  pickupRange: 10.45
+  pickupRange: 1.2
   pickupForce: 150
 --- !u!114 &2097579354136225625
 MonoBehaviour:
@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2097579355372201772}
-  speed: 2
+  speed: 1.7
   gravity: -98.1
   groundCheck: {fileID: 789693595}
   groundDistance: 0.4

@@ -23,7 +23,7 @@ public class PuzzleDValveSlot : MonoBehaviour {
             other.transform.position = transform.position;
 
             //Play the place item sound
-            aM.Play("Metalsound");
+            aM.Play("MetalSound");
             //Lastly destroy slot object
             Destroy(gameObject);
         }
