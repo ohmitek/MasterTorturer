@@ -6,7 +6,7 @@ using Cinemachine;
 public class Jumpscare : MonoBehaviour
 {
     [SerializeField] private CinemachineClearShot virtualJumpscareCamera;
-    [SerializeField] private CinemachineClearShot virtualJumpscareFallCamera;
+    //[SerializeField] private CinemachineClearShot virtualJumpscareFallCamera;
 
     public GameObject deadmanx; // THIS IS THE SCARY THING
 
@@ -45,7 +45,7 @@ public class Jumpscare : MonoBehaviour
     {
         yield return new WaitForSeconds(8f);
         virtualJumpscareCamera.Priority = 1;
-        virtualJumpscareFallCamera.Priority = 1;
+        //virtualJumpscareFallCamera.Priority = 1;
     }
 }
 

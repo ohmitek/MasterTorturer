@@ -105,7 +105,16 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
                 // Disable the mesh renderer of the snap location
                 Renderer snapRenderer = snapLocations[closestSnapLocationIndex].GetComponent<Renderer>();
                 if (snapRenderer != null) {
-                    AudioManager.Instance.Play("Metalsound");
+                    int randomIndex = Random.Range(0, 2); // Generates a random number between 0 and 1 (inclusive)
+                    if (randomIndex == 0)
+                    {
+                        AudioManager.Instance.Play("MetalSound");
+                    }
+                    else
+                    {
+                        AudioManager.Instance.Play("MetalSound2");
+                    }
+                    //AudioManager.Instance.Play("Metalsound");
                     snapRenderer.enabled = false;
                 }
             }
@@ -169,7 +178,8 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
             Debug.Log("TORTURE STARTED!");
 
             virtualTortureCamera.Priority = 11;
-            AudioManager.Instance.Play("MaleScream02");
+            AudioManager.Instance.Play("TortureSound");
+            AudioManager.Instance.Play("SoundOfInjuries");
 
             // Wait for 8 seconds and then change the camera priority to 12
             StartCoroutine(ResetCameraPriority());
@@ -179,26 +189,22 @@ public class TortureDeviceScriptCopyTK2 : MonoBehaviour
     }
 
     private IEnumerator ResetCameraPriority() {
-        yield return new WaitForSeconds(10f);
-        AudioManager.Instance.Play("MaleScream09");        
+        yield return new WaitForSeconds(9f);        
         virtualTortureCameraZoom.Priority = 12;
+        AudioManager.Instance.Stop("SUBBassRumbleLoop");
         StartCoroutine(ResetCameraPriorityAfterDelay());
     }
 
     private IEnumerator ResetCameraPriorityAfterDelay()
     {
         
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         virtualTortureCameraZoom.Priority = 1;
         virtualTortureCamera.Priority = 1;
-        //Vector3 ringPosition = new Vector3(-5.424f, 0.100f, 1.767f); // position to instantiate the ring
-        //Instantiate(LeftValve, ringPosition, Quaternion.identity); // instantiate the Left Valve at the specified position (REWARD from Puzzle A)
         AudioManager.Instance.Play("Puzzledone");
         puzzleAFinished = true;
-        //if (puzzleAFinished = true;) {
-        //            Vector3 ringPosition = new Vector3(-5.424f, 0.100f, 1.767f); // position to instantiate the ring
-        //            Instantiate(LeftValve, ringPosition, Quaternion.identity); // instantiate the Left Valve at the specified position (REWARD from Puzzle A)
-        //}
+        AudioManager.Instance.Play("LeftValveDrop");
+        AudioManager.Instance.Play("SUBBassRumble2(Loop)"); 
     }
 
 

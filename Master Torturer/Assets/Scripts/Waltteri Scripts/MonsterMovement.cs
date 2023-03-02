@@ -16,6 +16,7 @@ public class MonsterMovement : MonoBehaviour
 
     public void MoveToNextPosition()
     {
+            AudioManager.Instance.Play("SkeletonMove2");
             targetIndex = (targetIndex + 1) % targetPositions.Length;
             transform.position = targetPositions[targetIndex];
     }
