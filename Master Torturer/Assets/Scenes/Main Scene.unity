@@ -652,7 +652,7 @@ PrefabInstance:
     - target: {fileID: 3584773601934235778, guid: 3dcae3cdd819d5d4c9fc37a355190536,
         type: 3}
       propertyPath: maxTime
-      value: 300
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 3584773601934235779, guid: 3dcae3cdd819d5d4c9fc37a355190536,
         type: 3}
@@ -1367,7 +1367,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 269543583, guid: 446a7c31558a7774c8e4c56209427017, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.38817346
+      value: -0.3881735
       objectReference: {fileID: 0}
     - target: {fileID: 269543583, guid: 446a7c31558a7774c8e4c56209427017, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1375,7 +1375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 269543583, guid: 446a7c31558a7774c8e4c56209427017, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.11676588
+      value: 0.11676589
       objectReference: {fileID: 0}
     - target: {fileID: 3262657297278363861, guid: 446a7c31558a7774c8e4c56209427017,
         type: 3}
@@ -3268,11 +3268,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2097579354136225620, guid: 5b6de158d62802948a297ef6c264b0c7,
-        type: 3}
-      propertyPath: pickupRange
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2097579355372201773, guid: 5b6de158d62802948a297ef6c264b0c7,
         type: 3}
       propertyPath: m_RootOrder
