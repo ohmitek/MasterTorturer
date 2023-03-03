@@ -1436,11 +1436,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 269543583, guid: 446a7c31558a7774c8e4c56209427017, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.263331
+      value: 0.2633309
       objectReference: {fileID: 0}
     - target: {fileID: 269543583, guid: 446a7c31558a7774c8e4c56209427017, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.11676588
+      value: 0.11676586
       objectReference: {fileID: 0}
     - target: {fileID: 3262657297278363861, guid: 446a7c31558a7774c8e4c56209427017,
         type: 3}
@@ -4382,7 +4382,8 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
-  m_ChildCameras: []
+  m_ChildCameras:
+  - {fileID: 1700257148}
   m_ActivateAfter: 0
   m_MinDuration: 0
   m_RandomizeChoice: 0
@@ -6531,7 +6532,8 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_ShowDebugText: 0
-  m_ChildCameras: []
+  m_ChildCameras:
+  - {fileID: 768790802}
   m_ActivateAfter: 0
   m_MinDuration: 0
   m_RandomizeChoice: 0
@@ -10297,6 +10299,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 896283218}
     m_Modifications:
+    - target: {fileID: 2839796561782400344, guid: 304dbc5e6d882e042abf207531847e84,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743733964890716943, guid: 304dbc5e6d882e042abf207531847e84,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743733964890716943, guid: 304dbc5e6d882e042abf207531847e84,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 8486936951020155453, guid: d2d7857ba18f8154886c613a8ea16ff8,
+        type: 3}
     - target: {fileID: 4675077256816119783, guid: 304dbc5e6d882e042abf207531847e84,
         type: 3}
       propertyPath: m_RootOrder
@@ -10367,5 +10385,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: On-Chair Casual Motions Pack 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6815282809264386270, guid: 304dbc5e6d882e042abf207531847e84,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815282809264386270, guid: 304dbc5e6d882e042abf207531847e84,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 8486936951020155453, guid: d2d7857ba18f8154886c613a8ea16ff8,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 304dbc5e6d882e042abf207531847e84, type: 3}
