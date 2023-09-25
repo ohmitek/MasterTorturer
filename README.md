@@ -1,10 +1,6 @@
 # Master Torturer
 ### Unity Game project in Project Course in Game Development
 
+Solve the puzzles and get out of the dark Escape room.
 
-- Celebrate your first step into the Master Torturer and contribute more.
-
-## Additional tools to help you get Started with
-
-* [Unity](https://unity.com/)
-* [Sourcetree](https://www.sourcetreeapp.com/)
+![image](https://github.com/ohmitek/MasterTorturer/assets/53630914/1aa0526d-3806-41e6-84f1-82c34b066bfc)
